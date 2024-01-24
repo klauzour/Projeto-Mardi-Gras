@@ -18,11 +18,11 @@ public class StatusPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        life = 100;
+        life = 20;
         maxLife = life;
-        stamina = 60;
+        stamina = 6;
         maxStamina = stamina;
-        damage = 8;
+        damage = 5;
     }
 
     // Update is called once per frame

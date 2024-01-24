@@ -38,7 +38,7 @@ public class LojaControl : MonoBehaviour
             maxStaminaText.text = statusPlayer.maxStaminaValue.ToString();
             damageText.text = statusPlayer.damageValue.ToString();
         }
-        if (inShop == true && moveControl != null && moveControl.GetComponent<InputControl>().inputYValue < 0)
+        if (inShop == true && Input.GetKeyDown(KeyCode.Q) == true)
         {
             inShop = false;
             shop.SetActive(false);
@@ -48,10 +48,10 @@ public class LojaControl : MonoBehaviour
 
     public void MaxLifeUp()
     {
-        if (statusPlayer.coinsValue >= 20)
+        if (statusPlayer.coinsValue >= 10)
         {
-            statusPlayer.maxLifeValue += 50;
-            statusPlayer.coinsValue -= 20;
+            statusPlayer.maxLifeValue += 2;
+            statusPlayer.coinsValue -= 10;
         }
     }
 
@@ -59,27 +59,28 @@ public class LojaControl : MonoBehaviour
     {
         if (statusPlayer.coinsValue >= 20)
         {
-            statusPlayer.maxStaminaValue += 20;
+            statusPlayer.maxStaminaValue += 1;
             statusPlayer.coinsValue -= 20;
         }
 }
     public void DamageUp()
     {
-        if (statusPlayer.coinsValue >= 20)
+        if (statusPlayer.coinsValue >= 10)
         {
-            statusPlayer.damageValue += 2;
-            statusPlayer.coinsValue -= 20;
+            statusPlayer.damageValue += 1;
+            statusPlayer.coinsValue -= 10;
         }
     }
 
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<InputControl>().inputYValue > 0)
+        if (Input.GetKeyDown(KeyCode.E) == true)
         {
             inShop = true;
             statusPlayer = collision.GetComponent<StatusPlayer>();
             moveControl = collision.GetComponent<MoveControl>();
         }
     }
+
 }
