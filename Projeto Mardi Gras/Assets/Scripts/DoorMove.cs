@@ -7,20 +7,11 @@ public class DoorMove : MonoBehaviour
 
     [SerializeField] private Transform moveObj;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.GetComponent<MoveControl>() == null)
+            return;
+
         if (collision.GetComponent<InputControl>().inputYValue > 0)
         {
             collision.transform.position = moveObj.position;

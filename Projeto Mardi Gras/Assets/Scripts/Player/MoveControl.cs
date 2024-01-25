@@ -12,17 +12,10 @@ public class MoveControl : MonoBehaviour
     private bool canMove = true;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         inputControl = GetComponent<InputControl>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()

@@ -16,13 +16,7 @@ public class LojaControl : MonoBehaviour
 
 
     private bool inShop = false;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         ShopLogic();
@@ -75,6 +69,9 @@ public class LojaControl : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        if (collision.GetComponent<MoveControl>() == null)
+            return;
+
         if (Input.GetKeyDown(KeyCode.E) == true)
         {
             inShop = true;
