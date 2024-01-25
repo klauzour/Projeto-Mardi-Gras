@@ -10,7 +10,7 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] private float velocidade;
     private bool canMove = true;
-
+    private bool inStair = false;
 
     void Start()
     {
@@ -35,9 +35,15 @@ public class MoveControl : MonoBehaviour
         set { canMove = value; }
     }
 
+    public bool inStairValue
+    {
+        get { return inStair; }
+        set { inStair = value; }
+    }
+
     public void MoveLogic()
     {
-        if (canMove == true)
+        if (canMove == true && inStair == false)
         {
             rb.velocity = new Vector2(inputControl.inputXValue * velocidade, rb.velocity.y);
         }

@@ -23,9 +23,15 @@ public class LojaControl : MonoBehaviour
         ShopLogic();
     }
 
+    public bool inShopValue
+    { 
+        get { return inShop; } 
+        set {  inShop = value; } 
+    }
+
     public void ShopLogic()
     {
-        if (inShop == true)
+        if (inShop == true && Input.GetKeyDown(KeyCode.E) == true)
         {
             var playerRb = moveControl.GetComponent<Rigidbody2D>();
             playerRb.velocity = new Vector2(0, playerRb.velocity.y);
@@ -75,12 +81,22 @@ public class LojaControl : MonoBehaviour
         if (collision.GetComponent<MoveControl>() == null)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E) == true)
+        inShop = true;
+        statusPlayer = collision.GetComponent<StatusPlayer>();
+        moveControl = collision.GetComponent<MoveControl>();
+
+        /*if (Input.GetKeyDown(KeyCode.E) == true)
         {
             inShop = true;
             statusPlayer = collision.GetComponent<StatusPlayer>();
             moveControl = collision.GetComponent<MoveControl>();
-        }
+        }*/
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+
+        inShop = false;
     }
 
 }

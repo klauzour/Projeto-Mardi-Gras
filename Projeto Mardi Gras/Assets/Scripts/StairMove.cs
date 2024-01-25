@@ -17,7 +17,7 @@ public class StairMove : MonoBehaviour
     {
         if (onStair)
         {
-            moveControl.canMoveValue = false;
+            moveControl.inStairValue = true;
             rb.gravityScale = 0;
             var playerTransform = moveControl.GetComponent<Transform>();
             playerTransform.position = new Vector3 (transform.position.x, playerTransform.position.y, playerTransform.position.z);
@@ -32,7 +32,7 @@ public class StairMove : MonoBehaviour
         else if (rb)
         {
             rb.GetComponent<Rigidbody2D>().gravityScale = 1;
-            moveControl.canMoveValue = true;
+            moveControl.inStairValue = false;
         }
     }
 

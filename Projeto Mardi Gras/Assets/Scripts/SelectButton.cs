@@ -16,7 +16,7 @@ public class SelectButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (eventSystem.currentSelectedGameObject != null)
+        if (eventSystem.currentSelectedGameObject != null)
         {
             lastObj = eventSystem.currentSelectedGameObject;
         }
@@ -24,6 +24,6 @@ public class SelectButton : MonoBehaviour
         if (eventSystem.currentSelectedGameObject == null)
         {
             eventSystem.SetSelectedGameObject(lastObj);
-        }*/
+        }
     }
 }
