@@ -7,6 +7,7 @@ public class LojaControl : MonoBehaviour
 {
 
     private StatusPlayer statusPlayer;
+    private ItensControl itensControl;
     private MoveControl moveControl;
 
     [SerializeField] private GameObject shop;
@@ -14,6 +15,10 @@ public class LojaControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI maxStaminaText;
     [SerializeField] private TextMeshProUGUI damageText;
 
+    [SerializeField] private TextMeshProUGUI minePotionLifeText;
+    [SerializeField] private TextMeshProUGUI normalPotionLifeText;
+    [SerializeField] private TextMeshProUGUI minePotionStaminaText;
+    [SerializeField] private TextMeshProUGUI normalPotionStaminaText;
 
     private bool inShop = false;
 
@@ -30,11 +35,18 @@ public class LojaControl : MonoBehaviour
 
     public void ShopLogic()
     {
+        if (statusPlayer != null && itensControl != null)
+        {
+            maxLifeText.text = statusPlayer.maxLifeValue.ToString();
+            maxStaminaText.text = statusPlayer.maxStaminaValue.ToString();
+            damageText.text = statusPlayer.damageValue.ToString();
 
-        maxLifeText.text = statusPlayer.maxLifeValue.ToString();
-        maxStaminaText.text = statusPlayer.maxStaminaValue.ToString();
-        damageText.text = statusPlayer.damageValue.ToString();
+            minePotionLifeText.text = itensControl.itemMinePotionLifeValue.ToString();
+            normalPotionLifeText.text = itensControl.itemNormalPotionLifeValue.ToString();
+            minePotionStaminaText.text = itensControl.itemMinePotionStaminaValue.ToString();
+            normalPotionStaminaText.text = itensControl.itemNormalPotionStaminaValue.ToString();
 
+        }
         if (inShop == true && Input.GetKeyDown(KeyCode.E) == true)
         {
             var playerRb = moveControl.GetComponent<Rigidbody2D>();
@@ -76,6 +88,42 @@ public class LojaControl : MonoBehaviour
         }
     }
 
+    public void MinePotionLifeUp()
+    {
+        if (statusPlayer.coinsValue >= 10)
+        {
+            itensControl.itemMinePotionLifeValue += 1;
+            statusPlayer.coinsValue -= 10;
+        }
+    }
+
+    public void NormalPotionLifeUp()
+    {
+        if (statusPlayer.coinsValue >= 10)
+        {
+            itensControl.itemNormalPotionLifeValue += 1;
+            statusPlayer.coinsValue -= 10;
+        }
+    }
+
+    public void MinePotionStaminaUp()
+    {
+        if (statusPlayer.coinsValue >= 10)
+        {
+            itensControl.itemMinePotionStaminaValue += 1;
+            statusPlayer.coinsValue -= 10;
+        }
+    }
+
+    public void NormalPotionStaminaUp()
+    {
+        if (statusPlayer.coinsValue >= 10)
+        {
+            itensControl.itemNormalPotionStaminaValue += 1;
+            statusPlayer.coinsValue -= 10;
+        }
+    }
+
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -85,6 +133,7 @@ public class LojaControl : MonoBehaviour
         inShop = true;
         statusPlayer = collision.GetComponent<StatusPlayer>();
         moveControl = collision.GetComponent<MoveControl>();
+        itensControl = collision.GetComponent<ItensControl>();
 
         /*if (Input.GetKeyDown(KeyCode.E) == true)
         {
