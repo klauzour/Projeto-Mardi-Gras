@@ -6,7 +6,7 @@ public class DoorMove : MonoBehaviour
 {
 
     [SerializeField] private Transform moveObj;
-    private float lastInputY;
+    private float lastInputY = 1;
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -19,5 +19,6 @@ public class DoorMove : MonoBehaviour
         }
 
         lastInputY = collision.GetComponent<InputControl>().inputYValue;
+
     }
 }

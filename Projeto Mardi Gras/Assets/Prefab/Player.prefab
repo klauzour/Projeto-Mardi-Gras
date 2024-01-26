@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 3796123460404834555}
   - component: {fileID: 7678737116312907915}
   - component: {fileID: 9029474140384880281}
+  - component: {fileID: 5711516436615908967}
   - component: {fileID: 2205267883034030148}
   - component: {fileID: 2742207045427064625}
   m_Layer: 0
@@ -261,6 +262,26 @@ MonoBehaviour:
   damage: 1
   coins: 100
   textCoin: {fileID: 0}
+--- !u!114 &5711516436615908967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6761458942283435628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d24da37fa0f6e4ab6aad76f851d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemMinePotionLife: 0
+  itemNormalPotionLife: 0
+  minePotionLife: 2
+  normalPotionLife: 4
+  itemMinePotionStamina: 0
+  itemNormalPotionStamina: 0
+  minePotionStamina: 2
+  normalPotionStamina: 4
 --- !u!50 &2205267883034030148
 Rigidbody2D:
   serializedVersion: 4
