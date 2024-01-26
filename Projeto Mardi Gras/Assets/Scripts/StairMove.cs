@@ -20,11 +20,11 @@ public class StairMove : MonoBehaviour
             moveControl.inStairValue = true;
             rb.gravityScale = 0;
             var playerTransform = moveControl.GetComponent<Transform>();
-            playerTransform.position = new Vector3 (transform.position.x, playerTransform.position.y, playerTransform.position.z);
+            playerTransform.position = new Vector3(transform.position.x, playerTransform.position.y, playerTransform.position.z);
 
             rb.velocity = new Vector2(0, climbSpeed * inputControl.inputYValue);
 
-            if (inputControl.inputXValue != 0 && groundCheck.Grounded)
+            if (inputControl.inputXValue != 0)
             {
                 onStair = false;
             }
@@ -46,7 +46,7 @@ public class StairMove : MonoBehaviour
         moveControl = collision.GetComponent<MoveControl>();
         inputControl = collision.GetComponent<InputControl>();
 
-        if (inputControl.inputYValue != 0)
+        if (inputControl.inputYValue != 0 && groundCheck.Grounded)
         {
             onStair = true;
         }

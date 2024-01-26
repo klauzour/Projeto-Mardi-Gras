@@ -48,4 +48,5 @@ public class MoveControl : MonoBehaviour
             rb.velocity = new Vector2(inputControl.inputXValue * velocidade, rb.velocity.y);
         }
     }
+
 }

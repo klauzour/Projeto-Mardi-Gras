@@ -1,4 +1,3 @@
-using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -31,15 +30,17 @@ public class LojaControl : MonoBehaviour
 
     public void ShopLogic()
     {
+
+        maxLifeText.text = statusPlayer.maxLifeValue.ToString();
+        maxStaminaText.text = statusPlayer.maxStaminaValue.ToString();
+        damageText.text = statusPlayer.damageValue.ToString();
+
         if (inShop == true && Input.GetKeyDown(KeyCode.E) == true)
         {
             var playerRb = moveControl.GetComponent<Rigidbody2D>();
             playerRb.velocity = new Vector2(0, playerRb.velocity.y);
             shop.SetActive(true);
             moveControl.canMoveValue = false;
-            maxLifeText.text = statusPlayer.maxLifeValue.ToString();
-            maxStaminaText.text = statusPlayer.maxStaminaValue.ToString();
-            damageText.text = statusPlayer.damageValue.ToString();
         }
         if (inShop == true && Input.GetKeyDown(KeyCode.Q) == true)
         {
