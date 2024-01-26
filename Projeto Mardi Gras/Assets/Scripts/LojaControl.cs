@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,6 +27,8 @@ public class LojaControl : MonoBehaviour
     {
         if (inShop == true)
         {
+            var playerRb = moveControl.GetComponent<Rigidbody2D>();
+            playerRb.velocity = new Vector2(0, playerRb.velocity.y);
             shop.SetActive(true);
             moveControl.canMoveValue = false;
             maxLifeText.text = statusPlayer.maxLifeValue.ToString();
