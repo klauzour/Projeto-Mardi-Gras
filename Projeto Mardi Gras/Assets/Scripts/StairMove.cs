@@ -9,8 +9,7 @@ public class StairMove : MonoBehaviour
     private Rigidbody2D rb;
     private GroundCheck groundCheck;
 
-    float climbSpeed = 5f;
-    float climbJumpSpeed = 2f;
+    float climbSpeed = 4f;
     bool onStair = false;
 
     void Update()
@@ -19,8 +18,6 @@ public class StairMove : MonoBehaviour
         {
             moveControl.canMoveValue = false;
             rb.gravityScale = 0;
-            var playerTransform = moveControl.GetComponent<Transform>();
-            playerTransform.position = new Vector3 (transform.position.x, playerTransform.position.y, playerTransform.position.z);
 
             rb.velocity = new Vector2(0, climbSpeed * inputControl.inputYValue);
 
@@ -46,7 +43,7 @@ public class StairMove : MonoBehaviour
         moveControl = collision.GetComponent<MoveControl>();
         inputControl = collision.GetComponent<InputControl>();
 
-        if (inputControl.inputYValue != 0)
+        if (inputControl.inputYValue != 0 && groundCheck.Grounded)
         {
             onStair = true;
         }
@@ -59,7 +56,7 @@ public class StairMove : MonoBehaviour
         if (onStair)
         {
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0, climbJumpSpeed), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(0, 2f), ForceMode2D.Impulse);
             onStair = false;
         }
 
