@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      esquiva_0: 4936782889461198408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
