@@ -12,6 +12,7 @@ public class Combat : MonoBehaviour
     public static Combat Instance;
     public StatusPlayer player;
     public EnemyStatus enemy;
+    public ItensControl itens;
 
     public TextMeshProUGUI playervida;
     public TextMeshProUGUI playerStrenght;
@@ -20,11 +21,15 @@ public class Combat : MonoBehaviour
     public TextMeshProUGUI enemyvida;
     public TextMeshProUGUI enemyStrenght;
     public TextMeshProUGUI enemyStamina;
+    public TextMeshProUGUI largeC;
+    public TextMeshProUGUI smallC;
+    public TextMeshProUGUI largeT;
+    public TextMeshProUGUI smallT;
+    public TextMeshProUGUI caldo;
 
     public Button attackButton;
     public Button dodgeButton;
     public Button waitButton;
-    public Button itemsButton;
 
     private CombatAction playerChosenAction;
     private CombatAction enemyChosenAction;    
@@ -242,6 +247,11 @@ public class Combat : MonoBehaviour
         enemyvida.text = $"{enemy.life}";
         enemyStrenght.text = $"{enemy.strength}";
         enemyStamina.text = $"{enemy.stamina}";
+
+        largeC.text = $"{itens.itemNormalPotionStaminaValue}";
+        smallC.text = $"{itens.itemMinePotionStaminaValue}";
+        largeT.text = $"{itens.itemNormalPotionLifeValue}";
+        smallT.text = $"{itens.itemMinePotionLifeValue}";
     }
 
     // Update is called once per frame
@@ -255,5 +265,34 @@ public class Combat : MonoBehaviour
         Attack,
         Dodge,
         Wait
+    }
+
+    public void LCoffee()
+    {
+        itens.UseNormalPotionStamina();
+        UpdateUI();
+    }
+
+    public void SCoffee()
+    {
+        itens.UseMinePotionStamina();
+        UpdateUI();
+    }
+
+    public void LTea()
+    {
+        itens.UseNormalPotionLife();
+        UpdateUI();
+    }
+
+    public void STea()
+    {
+        itens.UseMinePotionLife();
+        UpdateUI();
+    }
+
+    public void Caldo()
+    {
+
     }
 }
