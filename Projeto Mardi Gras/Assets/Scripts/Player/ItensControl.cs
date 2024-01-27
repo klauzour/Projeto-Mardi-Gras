@@ -17,6 +17,10 @@ public class ItensControl : MonoBehaviour
     [SerializeField] private int minePotionStamina;
     [SerializeField] private int normalPotionStamina;
 
+    [SerializeField] private int itemPotionLifeAndStamina;
+    [SerializeField] private int potionLife;
+    [SerializeField] private int potionStamina;
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +56,12 @@ public class ItensControl : MonoBehaviour
     {
         get { return itemNormalPotionStamina; }
         set { itemNormalPotionStamina = value; }
+    }
+
+    public int itemPotionLifeAndStaminaValue
+    {
+        get { return itemPotionLifeAndStamina; }
+        set { itemPotionLifeAndStamina = value; }
     }
 
 
@@ -92,6 +102,16 @@ public class ItensControl : MonoBehaviour
             itemNormalPotionStamina -= 1;
 
             statusPlayer.staminaValue += normalPotionStamina;
+        }
+    }
+    public void UsePotionLifeAndStamina()
+    {
+        if (itemPotionLifeAndStamina > 0)
+        {
+            itemPotionLifeAndStamina -= 1;
+
+            statusPlayer.staminaValue += potionLife;
+            statusPlayer.staminaValue += potionStamina;
         }
     }
 

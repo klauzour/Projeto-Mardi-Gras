@@ -20,6 +20,8 @@ public class LojaControl : MonoBehaviour
     [SerializeField] private TextMeshProUGUI minePotionStaminaText;
     [SerializeField] private TextMeshProUGUI normalPotionStaminaText;
 
+    [SerializeField] private TextMeshProUGUI potionLifeAndStaminaText;
+
     private bool inShop = false;
 
     void Update()
@@ -45,6 +47,7 @@ public class LojaControl : MonoBehaviour
             normalPotionLifeText.text = itensControl.itemNormalPotionLifeValue.ToString();
             minePotionStaminaText.text = itensControl.itemMinePotionStaminaValue.ToString();
             normalPotionStaminaText.text = itensControl.itemNormalPotionStaminaValue.ToString();
+            potionLifeAndStaminaText.text = itensControl.itemPotionLifeAndStaminaValue.ToString();
 
         }
         if (inShop == true && Input.GetKeyDown(KeyCode.E) == true)
@@ -121,6 +124,14 @@ public class LojaControl : MonoBehaviour
         {
             itensControl.itemNormalPotionStaminaValue += 1;
             statusPlayer.coinsValue -= 10;
+        }
+    }
+    public void PotionLifeAndStaminaUp()
+    {
+        if (statusPlayer.coinsValue >= 20)
+        {
+            itensControl.itemPotionLifeAndStaminaValue += 1;
+            statusPlayer.coinsValue -= 20;
         }
     }
 

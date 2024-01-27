@@ -24,7 +24,8 @@ public class StatusPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textCoin.text = coins.ToString();
+        if (textCoin != null)
+            textCoin.text = coins.ToString();
     }
 
     public int maxLifeValue
