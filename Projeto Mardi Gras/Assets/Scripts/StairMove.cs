@@ -24,7 +24,7 @@ public class StairMove : MonoBehaviour
 
             rb.velocity = new Vector2(0, climbSpeed * inputControl.inputYValue);
 
-            if (inputControl.inputXValue != 0)
+            if (inputControl.inputXValue != 0 && groundCheck.Grounded)
             {
                 onStair = false;
             }
@@ -46,7 +46,7 @@ public class StairMove : MonoBehaviour
         moveControl = collision.GetComponent<MoveControl>();
         inputControl = collision.GetComponent<InputControl>();
 
-        if (inputControl.inputYValue != 0 && groundCheck.Grounded)
+        if (inputControl.inputYValue != 0)
         {
             onStair = true;
         }

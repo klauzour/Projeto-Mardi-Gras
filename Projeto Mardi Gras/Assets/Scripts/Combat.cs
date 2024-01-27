@@ -169,6 +169,9 @@ public class Combat : MonoBehaviour
             }
         }
 
+        player.staminaValue = Mathf.Clamp(player.staminaValue, 0, player.maxStaminaValue);
+        enemy.stamina = Mathf.Clamp(enemy.stamina, 0, enemy.maxStamina);
+
         // Atualize a interface com os status do jogador e do inimigo
         UpdateUI();
     }
@@ -184,6 +187,8 @@ public class Combat : MonoBehaviour
     void TakeDamage(StatusPlayer target, int damage)
     {
         target.lifeValue -= damage;
+        target.lifeValue = Mathf.Clamp(target.lifeValue, 0, target.maxLifeValue); // Garante que a vida não ultrapasse o máximo nem fique abaixo de 0
+
         if (target.lifeValue < 0)
         {
             target.lifeValue = 0;
@@ -193,6 +198,8 @@ public class Combat : MonoBehaviour
     void TakeDamage(EnemyStatus target, int damage)
     {
         target.life -= damage;
+        target.life = Mathf.Clamp(target.life, 0, target.maxLife); // Garante que a vida não ultrapasse o máximo nem fique abaixo de 0
+
         if (target.life < 0)
         {
             target.life = 0;
