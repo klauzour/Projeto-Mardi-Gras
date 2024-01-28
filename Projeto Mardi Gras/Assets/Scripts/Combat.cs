@@ -12,6 +12,7 @@ public class Combat : MonoBehaviour
     public static Combat Instance;
     public StatusPlayer player;
     public EnemyStatus enemy;
+    public MoveControl moveControl;
 
     public TextMeshProUGUI playervida;
     public TextMeshProUGUI playerStrenght;
@@ -43,21 +44,34 @@ public class Combat : MonoBehaviour
 
     private void Start()
     {
-        // Adicione os listeners aos botões de UI
-        attackButton.onClick.AddListener(PlayerAttack);
-        dodgeButton.onClick.AddListener(PlayerDodge);
-        waitButton.onClick.AddListener(PlayerWait);
-
         // Inicie o combatea
         player = Object.FindFirstObjectByType<StatusPlayer>();
+        moveControl = Object.FindFirstObjectByType<MoveControl>();
     }
 
     public void StartCombat(GameObject selectedEnemy)
     {
-        enemy = Object.FindFirstObjectByType<EnemyStatus>();
+
+        // Obtenha o componente EnemyStatus do objeto selecionado
+        enemy = selectedEnemy.GetComponent<EnemyStatus>();
+
+        if (enemy == null)
+        {
+            Debug.LogError("EnemyStatus component not found on the selectedEnemy GameObject.");
+            return;
+        }
+
+        if (moveControl != null)
+        {
+            var playerRb = moveControl.GetComponent<Rigidbody2D>();
+            playerRb.velocity = new Vector2(0, playerRb.velocity.y);            
+            moveControl.canMoveValue = false;
+        }
+
         player = Object.FindFirstObjectByType<StatusPlayer>();
         StartCoroutine(StartCombatUI());
     }
+
 
     IEnumerator StartCombatUI()
     {
@@ -221,7 +235,15 @@ public class Combat : MonoBehaviour
         {
             Debug.Log("O jogador venceu o combate");
             gameObject.SetActive(false);
+            player.lifeValue = player.maxLifeValue;
+            player.staminaValue = player.maxStaminaValue;
+            enemy.life = enemy.maxLife;
+            enemy.stamina = enemy.maxStamina;
             // Adicione a lógica para o jogador vencer o combate
+            if (moveControl != null)
+            {
+                moveControl.canMoveValue = true;
+            }
         }
         else
         {
