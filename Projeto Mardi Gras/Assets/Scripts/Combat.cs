@@ -11,7 +11,7 @@ public class Combat : MonoBehaviour
 {
     public static Combat Instance;
     public StatusPlayer player;
-    public EnemyStatus enemy;   
+    public EnemyStatus enemy;
 
     public TextMeshProUGUI playervida;
     public TextMeshProUGUI playerStrenght;
@@ -26,7 +26,7 @@ public class Combat : MonoBehaviour
     public Button waitButton;
 
     private CombatAction playerChosenAction;
-    private CombatAction enemyChosenAction;    
+    private CombatAction enemyChosenAction;
 
     private void Awake()
     {
@@ -49,13 +49,13 @@ public class Combat : MonoBehaviour
         waitButton.onClick.AddListener(PlayerWait);
 
         // Inicie o combatea
-        player = Object.FindFirstObjectByType<StatusPlayer>();        
+        player = Object.FindFirstObjectByType<StatusPlayer>();
     }
 
     public void StartCombat(GameObject selectedEnemy)
     {
         enemy = Object.FindFirstObjectByType<EnemyStatus>();
-        player = Object.FindFirstObjectByType<StatusPlayer>();        
+        player = Object.FindFirstObjectByType<StatusPlayer>();
         StartCoroutine(StartCombatUI());
     }
 
@@ -72,7 +72,7 @@ public class Combat : MonoBehaviour
     }
 
     void StartTurn()
-    {                
+    {
         // Atualize a interface com os status do jogador e do inimigo
         UpdateUI();
     }
@@ -81,19 +81,19 @@ public class Combat : MonoBehaviour
     {
         playerChosenAction = CombatAction.Attack;
         EnemyTurn();
-        
+
     }
 
     public void PlayerDodge()
     {
         playerChosenAction = CombatAction.Dodge;
-        EnemyTurn();        
+        EnemyTurn();
     }
 
     public void PlayerWait()
     {
         playerChosenAction = CombatAction.Wait;
-        EnemyTurn();        
+        EnemyTurn();
     }
 
     void ExecuteActions()
@@ -123,7 +123,7 @@ public class Combat : MonoBehaviour
             }
         }
         else if (playerChosenAction == CombatAction.Dodge && player.staminaValue >= 2)
-        {         
+        {
 
             if (enemyChosenAction == CombatAction.Attack)
             {
@@ -181,7 +181,7 @@ public class Combat : MonoBehaviour
         ExecuteActions();
         CheckCombatResult();
         UpdateUI();
-    }    
+    }
 
     void TakeDamage(StatusPlayer target, int damage)
     {
@@ -246,7 +246,7 @@ public class Combat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateUI();
     }
 
     public enum CombatAction

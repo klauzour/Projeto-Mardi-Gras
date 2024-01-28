@@ -276,15 +276,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemMinePotionLife: 1
   itemNormalPotionLife: 1
-  minePotionLife: 2
-  normalPotionLife: 4
+  minePotionLife: 5
+  normalPotionLife: 10
   itemMinePotionStamina: 1
   itemNormalPotionStamina: 1
-  minePotionStamina: 2
-  normalPotionStamina: 4
+  minePotionStamina: 5
+  normalPotionStamina: 10
   itemPotionLifeAndStamina: 1
-  potionLife: 0
-  potionStamina: 0
+  potionLife: 50
+  potionStamina: 50
+  largeC: {fileID: 0}
+  smallC: {fileID: 0}
+  largeT: {fileID: 0}
+  smallT: {fileID: 0}
+  caldo: {fileID: 0}
 --- !u!50 &2205267883034030148
 Rigidbody2D:
   serializedVersion: 4

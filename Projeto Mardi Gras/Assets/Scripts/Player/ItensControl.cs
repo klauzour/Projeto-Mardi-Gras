@@ -6,7 +6,6 @@ using UnityEngine;
 public class ItensControl : MonoBehaviour
 {
     private StatusPlayer statusPlayer;
-    private Combat combat;
 
 
     [SerializeField] private int itemMinePotionLife;
@@ -33,7 +32,6 @@ public class ItensControl : MonoBehaviour
     void Start()
     {
         statusPlayer = GetComponent<StatusPlayer>();
-        combat = Object.FindFirstObjectByType<Combat>();
     }
 
     // Update is called once per frame
@@ -85,7 +83,6 @@ public class ItensControl : MonoBehaviour
 
             int amountToAdd = Mathf.Min(minePotionLife, statusPlayer.maxLifeValue - statusPlayer.lifeValue);
             statusPlayer.lifeValue += amountToAdd;
-            combat.UpdateUI();
         }
     }
 
@@ -97,7 +94,6 @@ public class ItensControl : MonoBehaviour
 
             int amountToAdd = Mathf.Min(normalPotionLife, statusPlayer.maxLifeValue - statusPlayer.lifeValue);
             statusPlayer.lifeValue += amountToAdd;
-            combat.UpdateUI();
         }
     }
 
@@ -109,7 +105,6 @@ public class ItensControl : MonoBehaviour
 
             int amountToAdd = Mathf.Min(minePotionStamina, statusPlayer.maxStaminaValue - statusPlayer.staminaValue);
             statusPlayer.staminaValue += amountToAdd;
-            combat.UpdateUI();
         }
     }
 
@@ -121,7 +116,6 @@ public class ItensControl : MonoBehaviour
 
             int amountToAdd = Mathf.Min(normalPotionStamina, statusPlayer.maxStaminaValue - statusPlayer.staminaValue);
             statusPlayer.staminaValue += amountToAdd;
-            combat.UpdateUI();
         }
     }
 
@@ -136,7 +130,6 @@ public class ItensControl : MonoBehaviour
 
             statusPlayer.lifeValue += amountToAddLife;
             statusPlayer.staminaValue += amountToAddStamina;
-            combat.UpdateUI();
         }
     }
 }
