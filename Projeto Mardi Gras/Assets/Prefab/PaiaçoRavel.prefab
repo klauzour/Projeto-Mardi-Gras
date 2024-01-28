@@ -60,8 +60,6 @@ MonoBehaviour:
   waitProbability: 30
   combatScript: {fileID: 0}
   enemyImage: {fileID: 1018211143929927889}
-  imageWidth: 0
-  imageHeight: 0
 --- !u!222 &4282492023473868877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -90,7 +88,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4020050708767258098, guid: bb176f7f963506d4caf2eca8c30ff40a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
