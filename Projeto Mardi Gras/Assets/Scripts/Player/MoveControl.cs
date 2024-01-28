@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class MoveControl : MonoBehaviour
 {
@@ -13,21 +12,15 @@ public class MoveControl : MonoBehaviour
     private bool canMove = true;
     private bool inStair = false;
 
-    private Animator anim;
-    private Transform sprite;
-    private int spriteLocal = 1;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         inputControl = GetComponent<InputControl>();
-        anim = GetComponentInChildren<Animator>();
-        sprite = GetComponentInChildren<Transform>();
     }
 
     private void FixedUpdate()
     {
         MoveLogic();
-        AnimLogic();
     }
 
     public float velocidadeValue
@@ -54,21 +47,6 @@ public class MoveControl : MonoBehaviour
         {
             rb.velocity = new Vector2(inputControl.inputXValue * velocidade, rb.velocity.y);
         }
-    }
-
-    public void FlipLogic()
-    {
-        if (rb.velocity.x > 0)
-            spriteLocal = 1;
-        else if (rb.velocity.x < 0)
-            spriteLocal = -1;
-        sprite.localScale = new Vector2(spriteLocal, sprite.localScale.y);
-    }
-
-    public void AnimLogic()
-    {
-        FlipLogic();
-        anim.SetFloat("Horizontal", rb.velocity.x);
     }
 
 }
