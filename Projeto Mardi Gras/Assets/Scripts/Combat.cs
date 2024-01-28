@@ -14,6 +14,7 @@ public class Combat : MonoBehaviour
     public EnemyStatus enemy;
     public MoveControl moveControl;
     public Image enemyImageUI;
+    public combatanimations playerAnimationController;
 
     public TextMeshProUGUI playervida;
     public TextMeshProUGUI playerStrenght;
@@ -29,6 +30,8 @@ public class Combat : MonoBehaviour
 
     private CombatAction playerChosenAction;
     private CombatAction enemyChosenAction;
+    public AudioSource dodgeSound;
+    public AudioSource attackSound;
 
     private void Awake()
     {
@@ -100,12 +103,16 @@ public class Combat : MonoBehaviour
     public void PlayerAttack()
     {
         playerChosenAction = CombatAction.Attack;
+        playerAnimationController.PlayAttackAnimation();
+        attackSound.Play();
         EnemyTurn();
     }
 
     public void PlayerDodge()
     {
         playerChosenAction = CombatAction.Dodge;
+        playerAnimationController.PlayDodgeAnimation();
+        dodgeSound.Play();
         EnemyTurn();
     }
 
