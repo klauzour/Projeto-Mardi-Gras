@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pose de Combate_0: 1573475091552127591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
