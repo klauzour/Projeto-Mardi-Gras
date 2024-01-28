@@ -202,11 +202,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Esquivando_0: 3114522796660401981
-      Esquivando_1: 7677612154566654243
-      Esquivando_2: -7992309066304847851
-      Esquivando_3: -4024533265766554433
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
