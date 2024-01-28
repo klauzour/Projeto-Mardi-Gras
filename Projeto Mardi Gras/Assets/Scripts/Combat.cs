@@ -13,6 +13,8 @@ public class Combat : MonoBehaviour
     public StatusPlayer player;
     public EnemyStatus enemy;
     public MoveControl moveControl;
+    public Image enemyImageUI;
+    public combatanimations playerAnimationController;
 
     public TextMeshProUGUI playervida;
     public TextMeshProUGUI playerStrenght;
@@ -28,6 +30,8 @@ public class Combat : MonoBehaviour
 
     private CombatAction playerChosenAction;
     private CombatAction enemyChosenAction;
+    public AudioSource dodgeSound;
+    public AudioSource attackSound;
 
     private void Awake()
     {
@@ -75,11 +79,16 @@ public class Combat : MonoBehaviour
 
     IEnumerator StartCombatUI()
     {
-        // Aguarde um pequeno tempo para dar tempo de configurar o combate
         yield return new WaitForSeconds(0.1f);
 
         // Atualize a interface com os status do jogador e do inimigo
         UpdateUI();
+
+        // Substitua a imagem da UI pela imagem do inimigo
+        if (enemyImageUI != null && enemy != null && enemy.enemyImage != null)
+        {
+            enemyImageUI.sprite = enemy.enemyImage.sprite; // Use a propriedade sprite para obter a sprite da Image
+        }
 
         // Inicie o combate
         StartTurn();
@@ -94,13 +103,16 @@ public class Combat : MonoBehaviour
     public void PlayerAttack()
     {
         playerChosenAction = CombatAction.Attack;
+        playerAnimationController.PlayAttackAnimation();
+        attackSound.Play();
         EnemyTurn();
-
     }
 
     public void PlayerDodge()
     {
         playerChosenAction = CombatAction.Dodge;
+        playerAnimationController.PlayDodgeAnimation();
+        dodgeSound.Play();
         EnemyTurn();
     }
 
@@ -244,6 +256,7 @@ public class Combat : MonoBehaviour
             {
                 moveControl.canMoveValue = true;
             }
+            player.coinsValue += 100;
         }
         else
         {
