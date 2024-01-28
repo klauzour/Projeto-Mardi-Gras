@@ -9,10 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: a5a7f67523155fd41abd881785eec2b1
   - enabled: 1
-    path: Assets/Scenes/Move (Test).unity
-    guid: d1d796a3036d2a945804f0262eda7344
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 569554bd13c6fcf46bdd24f49e859e6c
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
