@@ -256,6 +256,7 @@ public class Combat : MonoBehaviour
             {
                 moveControl.canMoveValue = true;
             }
+            player.coinsValue += 100;
         }
         else
         {
