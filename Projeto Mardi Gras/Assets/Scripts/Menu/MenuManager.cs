@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour
     public void Play()
     {
         // Trocar "play" pela cena certa 
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene(1);
     }
 
     public void Config()
