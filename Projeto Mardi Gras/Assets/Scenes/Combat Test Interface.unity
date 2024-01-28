@@ -1145,9 +1145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d84431304d69c49811a573fe55d485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1420361830}
   enemy: {fileID: 0}
-  itens: {fileID: 0}
   playervida: {fileID: 1429660480}
   playerStrenght: {fileID: 428572639}
   playerstamina: {fileID: 1707972936}
@@ -1155,11 +1154,6 @@ MonoBehaviour:
   enemyvida: {fileID: 328016293}
   enemyStrenght: {fileID: 1812209326}
   enemyStamina: {fileID: 314429668}
-  largeC: {fileID: 1324549558}
-  smallC: {fileID: 351759923}
-  largeT: {fileID: 1466900166}
-  smallT: {fileID: 2031755539}
-  caldo: {fileID: 2009023262}
   attackButton: {fileID: 1096171250}
   dodgeButton: {fileID: 1649699687}
   waitButton: {fileID: 1184129007}
@@ -2049,10 +2043,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 748726071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1420361827}
+        m_TargetAssemblyTypeName: ItensControl, Assembly-CSharp
+        m_MethodName: UseMinePotionStamina
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2642,10 +2636,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 748726071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1420361827}
+        m_TargetAssemblyTypeName: ItensControl, Assembly-CSharp
+        m_MethodName: UseNormalPotionStamina
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2889,6 +2883,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324549556}
   m_CullTransparentMesh: 1
+--- !u!114 &1420361827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+  m_PrefabInstance: {fileID: 1510940652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d24da37fa0f6e4ab6aad76f851d1b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1420361830 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9029474140384880281, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+  m_PrefabInstance: {fileID: 1510940652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb06b96345759654e8046533fe15389d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1429660478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,6 +3418,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: caldo
+      value: 
+      objectReference: {fileID: 2009023262}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: combat
+      value: 
+      objectReference: {fileID: 330668229}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: largeC
+      value: 
+      objectReference: {fileID: 1324549558}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: largeT
+      value: 
+      objectReference: {fileID: 1466900166}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: smallC
+      value: 
+      objectReference: {fileID: 351759923}
+    - target: {fileID: 5711516436615908967, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
+      propertyPath: smallT
+      value: 
+      objectReference: {fileID: 2031755539}
     - target: {fileID: 6761458942283435628, guid: 20e0da94f199aa245b24eeb92514e825, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3494,10 +3534,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 748726071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1420361827}
+        m_TargetAssemblyTypeName: ItensControl, Assembly-CSharp
+        m_MethodName: UseMinePotionLife
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3821,10 +3861,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 748726071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1420361827}
+        m_TargetAssemblyTypeName: ItensControl, Assembly-CSharp
+        m_MethodName: UseNormalPotionLife
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4435,10 +4475,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 748726071}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1420361827}
+        m_TargetAssemblyTypeName: ItensControl, Assembly-CSharp
+        m_MethodName: UsePotionLifeAndStamina
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

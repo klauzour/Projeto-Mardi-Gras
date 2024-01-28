@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ItensControl : MonoBehaviour
 {
     private StatusPlayer statusPlayer;
+    private Combat combat;
 
 
     [SerializeField] private int itemMinePotionLife;
@@ -21,17 +23,27 @@ public class ItensControl : MonoBehaviour
     [SerializeField] private int potionLife;
     [SerializeField] private int potionStamina;
 
+    public TextMeshProUGUI largeC;
+    public TextMeshProUGUI smallC;
+    public TextMeshProUGUI largeT;
+    public TextMeshProUGUI smallT;
+    public TextMeshProUGUI caldo;
 
     // Start is called before the first frame update
     void Start()
     {
         statusPlayer = GetComponent<StatusPlayer>();
+        combat = Object.FindFirstObjectByType<Combat>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        largeC.text = $"{itemNormalPotionStamina}";
+        smallC.text = $"{itemMinePotionStamina}";
+        largeT.text = $"{itemNormalPotionLife}";
+        smallT.text = $"{itemMinePotionLife}";
+        caldo.text = $"{itemPotionLifeAndStamina}";
     }
 
     public int itemMinePotionLifeValue
@@ -67,56 +79,64 @@ public class ItensControl : MonoBehaviour
 
     public void UseMinePotionLife()
     {
-        if (itemMinePotionLife > 0)
+        if (itemMinePotionLife > 0 && statusPlayer.lifeValue < statusPlayer.maxLifeValue)
         {
             itemMinePotionLife -= 1;
 
-            statusPlayer.lifeValue += minePotionLife;
+            int amountToAdd = Mathf.Min(minePotionLife, statusPlayer.maxLifeValue - statusPlayer.lifeValue);
+            statusPlayer.lifeValue += amountToAdd;
+            combat.UpdateUI();
         }
     }
 
     public void UseNormalPotionLife()
     {
-        if (itemNormalPotionLife > 0)
+        if (itemNormalPotionLife > 0 && statusPlayer.lifeValue < statusPlayer.maxLifeValue)
         {
             itemNormalPotionLife -= 1;
 
-            statusPlayer.lifeValue += normalPotionLife;
+            int amountToAdd = Mathf.Min(normalPotionLife, statusPlayer.maxLifeValue - statusPlayer.lifeValue);
+            statusPlayer.lifeValue += amountToAdd;
+            combat.UpdateUI();
         }
     }
 
     public void UseMinePotionStamina()
     {
-        if (itemMinePotionStamina > 0)
+        if (itemMinePotionStamina > 0 && statusPlayer.staminaValue < statusPlayer.maxStaminaValue)
         {
             itemMinePotionStamina -= 1;
 
-            statusPlayer.staminaValue += minePotionStamina;
+            int amountToAdd = Mathf.Min(minePotionStamina, statusPlayer.maxStaminaValue - statusPlayer.staminaValue);
+            statusPlayer.staminaValue += amountToAdd;
+            combat.UpdateUI();
         }
     }
 
     public void UseNormalPotionStamina()
     {
-        if (itemNormalPotionStamina > 0)
+        if (itemNormalPotionStamina > 0 && statusPlayer.staminaValue < statusPlayer.maxStaminaValue)
         {
             itemNormalPotionStamina -= 1;
 
-            statusPlayer.staminaValue += normalPotionStamina;
+            int amountToAdd = Mathf.Min(normalPotionStamina, statusPlayer.maxStaminaValue - statusPlayer.staminaValue);
+            statusPlayer.staminaValue += amountToAdd;
+            combat.UpdateUI();
         }
     }
+
     public void UsePotionLifeAndStamina()
     {
         if (itemPotionLifeAndStamina > 0)
         {
             itemPotionLifeAndStamina -= 1;
 
-            statusPlayer.staminaValue += potionLife;
-            statusPlayer.staminaValue += potionStamina;
+            int amountToAddLife = Mathf.Min(potionLife, statusPlayer.maxLifeValue - statusPlayer.lifeValue);
+            int amountToAddStamina = Mathf.Min(potionStamina, statusPlayer.maxStaminaValue - statusPlayer.staminaValue);
+
+            statusPlayer.lifeValue += amountToAddLife;
+            statusPlayer.staminaValue += amountToAddStamina;
+            combat.UpdateUI();
         }
     }
-
-
-
-
-
 }

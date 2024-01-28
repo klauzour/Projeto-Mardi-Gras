@@ -274,14 +274,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d24da37fa0f6e4ab6aad76f851d1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemMinePotionLife: 0
-  itemNormalPotionLife: 0
+  itemMinePotionLife: 1
+  itemNormalPotionLife: 1
   minePotionLife: 2
   normalPotionLife: 4
-  itemMinePotionStamina: 0
-  itemNormalPotionStamina: 0
+  itemMinePotionStamina: 1
+  itemNormalPotionStamina: 1
   minePotionStamina: 2
   normalPotionStamina: 4
+  itemPotionLifeAndStamina: 1
+  potionLife: 0
+  potionStamina: 0
 --- !u!50 &2205267883034030148
 Rigidbody2D:
   serializedVersion: 4
