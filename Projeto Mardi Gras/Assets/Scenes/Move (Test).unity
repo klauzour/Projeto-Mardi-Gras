@@ -19306,6 +19306,7 @@ MonoBehaviour:
       m_Calls: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &360940742
 =======
 --- !u!1 &415374509
@@ -19774,6 +19775,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
 --- !u!1 &444973012
@@ -20453,6 +20456,7 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &552623857
 =======
 --- !u!1 &554328560
@@ -20715,6 +20719,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 554328560}
   m_CullTransparentMesh: 1
 >>>>>>> db53ea97aef35dd247ab8fcdc3dd3837d45118cd
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
 --- !u!1 &576950031
@@ -22119,6 +22125,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &775009046
 =======
 --- !u!1 &778497324
@@ -22277,6 +22284,8 @@ SpriteRenderer:
   m_Father: {fileID: 1710404877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> db53ea97aef35dd247ab8fcdc3dd3837d45118cd
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
 --- !u!1 &818057356
@@ -25082,6 +25091,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1377245524
 =======
 --- !u!1 &1410000195
@@ -25416,6 +25426,8 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 =======
 >>>>>>> parent of 41f6644 (casass)
+=======
+>>>>>>> parent of 41f6644 (casass)
 --- !u!1 &1412565703
 GameObject:
   m_ObjectHideFlags: 0
@@ -25564,6 +25576,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1456535971
@@ -25783,6 +25796,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1433471217}
   m_CullTransparentMesh: 1
 >>>>>>> db53ea97aef35dd247ab8fcdc3dd3837d45118cd
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
 --- !u!1 &1457940234
@@ -26161,6 +26176,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1563626919
 =======
 --- !u!1 &1526212560
@@ -26406,6 +26422,8 @@ Transform:
   m_Father: {fileID: 1410000196}
 >>>>>>> db53ea97aef35dd247ab8fcdc3dd3837d45118cd
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
 --- !u!1 &1589158935
@@ -28897,9 +28915,12 @@ SceneRoots:
   - {fileID: 500280635}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 2004670135}
 =======
   - {fileID: 452016845}
 >>>>>>> db53ea97aef35dd247ab8fcdc3dd3837d45118cd
+=======
+>>>>>>> parent of 41f6644 (casass)
 =======
 >>>>>>> parent of 41f6644 (casass)
