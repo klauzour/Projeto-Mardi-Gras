@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyStatus : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class EnemyStatus : MonoBehaviour
     public int waitProbability;
 
     public Combat combatScript;
+    public Image enemyImage;
 
     // Start is called before the first frame update
     void Start()
